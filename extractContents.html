@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>extractContents</title>
+</head>
+<body>
+    <script>
+        function moveContent(){
+            var srcDiv = document.getElementById("srcDiv");
+            var distDiv = document.getElementById("distDiv");
+            var rangeObj = document.createRange();
+            rangeObj.selectNodeContents(srcDiv);
+            var doFragment = rangeObj.extractContents();
+            distDiv.appendChild(doFragment);
+        }
+    </script>
+
+    <div id="srcDiv" style="background: aquamarine;width: 300px;height: 50px;">Hello!</div>
+    <div id="distDiv" style="background: bisque;width: 300px;height: 50px;"></div>
+    <button onclick="moveContent()">移动元素</button>
+</body>
+</html>
